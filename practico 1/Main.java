@@ -14,6 +14,7 @@ public class Main {
             System.out.println ("3. Potencia de un numero entero positivo");
             System.out.println ("4. Conteo de un numero entero positivo");
             System.out.println ("5. Producto de un numero entero positivo");
+            System.out.println ("6. Imprimir un arreglo de forma inversa");
             ejercicio=Integer.parseInt(sc.nextLine());
             switch (ejercicio){
                 case 1:
@@ -49,6 +50,12 @@ public class Main {
                     int productoNum=Integer.parseInt(sc.nextLine());
                     Producto producto=new Producto(numCalcular, productoNum);
                     System.out.println("Potencia de "+numCalcular+" * "+productoNum+" = "+producto.getR());
+                    break;
+                case 6:
+                    System.out.println ("Ingrese un numero entero positivo para que sea el numero de elementos del arreglo que se cargara aleatoriamente: ");
+                    numCalcular=Integer.parseInt(sc.nextLine());
+                    ArregloInverso arregloInverso=new ArregloInverso(numCalcular);
+                    //System.out.println("Potencia de "+numCalcular+" = "+arregloInverso.getR());
                     break;
             }
             System.out.println("Realizar otro ejercicio? Si/No");
