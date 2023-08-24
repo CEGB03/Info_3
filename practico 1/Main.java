@@ -13,6 +13,7 @@ public class Main {
             System.out.println ("2. Sumatoria de un numero entero positivo");
             System.out.println ("3. Potencia de un numero entero positivo");
             System.out.println ("4. Conteo de un numero entero positivo");
+            System.out.println ("5. Producto de un numero entero positivo");
             ejercicio=Integer.parseInt(sc.nextLine());
             switch (ejercicio){
                 case 1:
@@ -40,6 +41,14 @@ public class Main {
                     numCalcular=Integer.parseInt(sc.nextLine());
                     Conteo conteo=new Conteo(numCalcular);
                     //System.out.println("Conteo de "+numCalcular+" = fue: "+conteo.s.toString());
+                    break;
+                case 5:
+                    System.out.println ("Ingrese un numero entero positivo para que sea el multiplo de la multiplicacion: ");
+                    numCalcular=Integer.parseInt(sc.nextLine());
+                    System.out.println ("Ingrese un numero entero positivo para que sea el producto de la multiplicacion: ");
+                    int productoNum=Integer.parseInt(sc.nextLine());
+                    Producto producto=new Producto(numCalcular, productoNum);
+                    System.out.println("Potencia de "+numCalcular+" * "+productoNum+" = "+producto.getR());
                     break;
             }
             System.out.println("Realizar otro ejercicio? Si/No");

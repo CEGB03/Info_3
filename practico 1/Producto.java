@@ -1,18 +1,18 @@
-public class Potencia {
+public class Producto {
     int b;
     int p;
     int r;
-    Potencia(int b, int p){
+    Producto(int b, int p){
 
-        this.r=potencia_f(b,p);
+        this.r=producto_f(b,p);
     }
-    public int potencia_f(int b, int p){
+    public int producto_f(int b, int p){
         if(p==1)
             return b;
         else if (p == 0) {
             return 1;
         } else
-            return b*potencia_f(b, p-1);
+            return b+producto_f(b, p-1);
     }
     public int getR(){
         return r;
