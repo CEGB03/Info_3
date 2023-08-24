@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=Calculadora
+comment1.params=x\ y
+comment1.target=Calculadora(java.lang.Float,\ java.lang.Float)
+comment10.params=
+comment10.target=java.lang.Float\ Multiplicacion()
+comment11.params=
+comment11.target=java.lang.Float\ Divicion()
+comment2.params=
+comment2.target=void\ ElegirOperacion()
+comment3.params=
+comment3.target=java.lang.Float\ EjecutarOperacion()
+comment4.params=x
+comment4.target=void\ setX(java.lang.Float)
+comment5.params=x
+comment5.target=void\ setY(java.lang.Float)
+comment6.params=
+comment6.target=java.lang.Float\ getX()
+comment7.params=
+comment7.target=java.lang.Float\ getY()
+comment8.params=
+comment8.target=java.lang.Float\ Suma()
+comment9.params=
+comment9.target=java.lang.Float\ Resta()
+numComments=12
