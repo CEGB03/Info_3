@@ -15,6 +15,7 @@ public class Main {
             System.out.println ("4. Conteo de un numero entero positivo");
             System.out.println ("5. Producto de un numero entero positivo");
             System.out.println ("6. Imprimir un arreglo de forma inversa");
+            System.out.println ("7. Calcular la cantidad de 1 en la representacion binaria del un numero entero positivo");
             ejercicio=Integer.parseInt(sc.nextLine());
             switch (ejercicio){
                 case 1:
@@ -56,6 +57,12 @@ public class Main {
                     numCalcular=Integer.parseInt(sc.nextLine());
                     ArregloInverso arregloInverso=new ArregloInverso(numCalcular);
                     //System.out.println("Potencia de "+numCalcular+" = "+arregloInverso.getR());
+                    break;
+                case 7:
+                    System.out.println ("Ingrese un numero entero positivo para calcular la cantidad de 1 que tiene su representacion en binario: ");
+                    numCalcular=Integer.parseInt(sc.nextLine());
+                    RepresentacionBinaria representacionBinaria=new RepresentacionBinaria(numCalcular);
+                    System.out.println("Cantidad de 1 en la representacion binaria de "+numCalcular+" son = "+representacionBinaria.getCont());
                     break;
             }
             System.out.println("Realizar otro ejercicio? Si/No");
