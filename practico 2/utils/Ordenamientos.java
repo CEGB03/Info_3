@@ -1,3 +1,5 @@
+// Usado en Ejercicio 1 y Ejercicio 4
+package utils;
 public class Ordenamientos<AnyType> {
     /**
      * Imprime el Arreglo este ordenado o no

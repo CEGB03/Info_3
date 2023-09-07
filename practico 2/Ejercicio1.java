@@ -1,3 +1,5 @@
+import utils.Ordenamientos;
+
 import java.util.Scanner;
 import java.util.Random;
 
@@ -138,8 +140,6 @@ public class Ejercicio1<AnyType> {
         int j=arraySize-1;
         for (int i = 0; i <arraySize; i++) {
             arrayI[i] = random.nextInt(1000); // Genera un número aleatorio entre 0 (inclusive) y 1000 (exclusive)
-            //arrayI[i] = j;
-            //j--;
         }
     }
     public static void CargaArrayDoble() {
