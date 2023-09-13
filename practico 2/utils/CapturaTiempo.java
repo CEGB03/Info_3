@@ -1,5 +1,4 @@
 package utils;
-import utils.Ordenamientos;
 import java.util.Random;
 
 public class CapturaTiempo {
@@ -38,7 +37,6 @@ public class CapturaTiempo {
         System.out.println("Tiempo de ejecución: " + duracionEnSegundos + " segundos");
     }
     private void ImprimirArreglos(){
-        System.out.println("Impreson de Funcion.\n");
         ordenamientosInteger.ImprimirArreglo(array);
         ordenamientosInteger.ImprimirArreglo(arrayCopia);
     }
@@ -48,95 +46,85 @@ public class CapturaTiempo {
         arraySize=prueba1;
         CargaArrayRandom();
         arrayCopia=array.clone();
-        ImprimirArreglos();
-        System.out.println("Para el ordenamiento de Inserccion:");
+        //ImprimirArreglos();
+        System.out.println("\nPara el ordenamiento de Inserccion:");
         inicio = System.nanoTime(); // Captura el tiempo inicial
         ordenamientosInteger.insertionShort_T(arrayCopia);
         fin = System.nanoTime(); // Captura el tiempo final
-        ImprimirArreglos();
+        //ImprimirArreglos();
         CalcularTiempo();
         arrayCopia=array.clone();
-        ImprimirArreglos();
+        //ImprimirArreglos();
         System.out.println("Para el ordenamiento shell:");
-        inicio = System.currentTimeMillis(); // Captura el tiempo inicial
+        inicio = System.nanoTime(); // Captura el tiempo inicial
         ordenamientosInteger.shell(arrayCopia);
-        fin = System.currentTimeMillis(); // Captura el tiempo final
+        fin = System.nanoTime(); // Captura el tiempo final
         CalcularTiempo();
         arrayCopia=array.clone();
-        ImprimirArreglos();
+        //ImprimirArreglos();
         System.out.println("Para el ordenamiento quicksort:");
-        inicio = System.currentTimeMillis(); // Captura el tiempo inicial
+        inicio = System.nanoTime(); // Captura el tiempo inicial
         ordenamientosInteger.quicksort(arrayCopia,0,arraySize-1);
-        fin = System.currentTimeMillis(); // Captura el tiempo final
+        fin = System.nanoTime(); // Captura el tiempo final
         CalcularTiempo();
-        ImprimirArreglos();
+        //ImprimirArreglos();
     }
     private void SegundoEjecucion(){
         array=new Integer[prueba2];
         arrayCopia=new Integer[prueba2];
         arraySize=prueba2;
         CargaArrayRandom();
-        ordenamientosInteger.ImprimirArreglo(array);
         arrayCopia=array.clone();
-        ordenamientosInteger.ImprimirArreglo(arrayCopia);
-        System.out.println("Para el ordenamiento de Inserccion:");
-        inicio = System.currentTimeMillis(); // Captura el tiempo inicial
+        //ImprimirArreglos();
+        System.out.println("\nPara el ordenamiento de Inserccion:");
+        inicio = System.nanoTime(); // Captura el tiempo inicial
         ordenamientosInteger.insertionShort_T(arrayCopia);
-        fin = System.currentTimeMillis(); // Captura el tiempo final
-        ordenamientosInteger.ImprimirArreglo(array);
-        ordenamientosInteger.ImprimirArreglo(arrayCopia);
+        fin = System.nanoTime(); // Captura el tiempo final
+        //ImprimirArreglos();
         CalcularTiempo();
-        ordenamientosInteger.ImprimirArreglo(array);
         arrayCopia=array.clone();
-        ordenamientosInteger.ImprimirArreglo(arrayCopia);
+        //ImprimirArreglos();
         System.out.println("Para el ordenamiento shell:");
-        inicio = System.currentTimeMillis(); // Captura el tiempo inicial
+        inicio = System.nanoTime(); // Captura el tiempo inicial
         ordenamientosInteger.shell(arrayCopia);
-        fin = System.currentTimeMillis(); // Captura el tiempo final
+        fin = System.nanoTime(); // Captura el tiempo final
         CalcularTiempo();
-        ordenamientosInteger.ImprimirArreglo(array);
         arrayCopia=array.clone();
-        ordenamientosInteger.ImprimirArreglo(arrayCopia);
+        //ImprimirArreglos();
         System.out.println("Para el ordenamiento quicksort:");
-        inicio = System.currentTimeMillis(); // Captura el tiempo inicial
+        inicio = System.nanoTime(); // Captura el tiempo inicial
         ordenamientosInteger.quicksort(arrayCopia,0,arraySize-1);
-        fin = System.currentTimeMillis(); // Captura el tiempo final
+        fin = System.nanoTime(); // Captura el tiempo final
         CalcularTiempo();
-        ordenamientosInteger.ImprimirArreglo(array);
-        ordenamientosInteger.ImprimirArreglo(arrayCopia);
+        //ImprimirArreglos();
     }
     private void TercerEjecucion(){
         array=new Integer[prueba3];
         arrayCopia=new Integer[prueba3];
         arraySize=prueba3;
         CargaArrayRandom();
-        ordenamientosInteger.ImprimirArreglo(array);
         arrayCopia=array.clone();
-        ordenamientosInteger.ImprimirArreglo(arrayCopia);
-        System.out.println("Para el ordenamiento de Inserccion:");
-        inicio = System.currentTimeMillis(); // Captura el tiempo inicial
+        //ImprimirArreglos();
+        System.out.println("\nPara el ordenamiento de Inserccion:");
+        inicio = System.nanoTime(); // Captura el tiempo inicial
         ordenamientosInteger.insertionShort_T(arrayCopia);
-        fin = System.currentTimeMillis(); // Captura el tiempo final
-        ordenamientosInteger.ImprimirArreglo(array);
-        ordenamientosInteger.ImprimirArreglo(arrayCopia);
+        fin = System.nanoTime(); // Captura el tiempo final
+        //ImprimirArreglos();
         CalcularTiempo();
-        ordenamientosInteger.ImprimirArreglo(array);
         arrayCopia=array.clone();
-        ordenamientosInteger.ImprimirArreglo(arrayCopia);
+        //ImprimirArreglos();
         System.out.println("Para el ordenamiento shell:");
-        inicio = System.currentTimeMillis(); // Captura el tiempo inicial
+        inicio = System.nanoTime(); // Captura el tiempo inicial
         ordenamientosInteger.shell(arrayCopia);
-        fin = System.currentTimeMillis(); // Captura el tiempo final
+        fin = System.nanoTime(); // Captura el tiempo final
         CalcularTiempo();
-        ordenamientosInteger.ImprimirArreglo(array);
         arrayCopia=array.clone();
-        ordenamientosInteger.ImprimirArreglo(arrayCopia);
+        //ImprimirArreglos();
         System.out.println("Para el ordenamiento quicksort:");
-        inicio = System.currentTimeMillis(); // Captura el tiempo inicial
+        inicio = System.nanoTime(); // Captura el tiempo inicial
         ordenamientosInteger.quicksort(arrayCopia,0,arraySize-1);
-        fin = System.currentTimeMillis(); // Captura el tiempo final
+        fin = System.nanoTime(); // Captura el tiempo final
         CalcularTiempo();
-        ordenamientosInteger.ImprimirArreglo(array);
-        ordenamientosInteger.ImprimirArreglo(arrayCopia);
+        //ImprimirArreglos();
     }
 }

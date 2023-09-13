@@ -13,7 +13,7 @@ public class Ejercicio4 {
     static int ejercicio;
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Ingrese el numero de ejercicio a realizar:\na. 100 elementos.\nb. 1000 elementos.\nc. 10000 elementos.\nSe calculara el tiempo de ejecucion por cada tipo de ordenamiento para arreglos cargados de forma aleatoria. ");
+        System.out.println("Ingrese el numero de ejercicio a realizar:\n1. 100 elementos.\n2. 1000 elementos.\n3. 10000 elementos.\nSe calculara el tiempo de ejecucion por cada tipo de ordenamiento para arreglos cargados de forma aleatoria. ");
         ejercicio = Integer.parseInt(sc.nextLine());
         CapturaTiempo capturaTiempo = new CapturaTiempo(ejercicio);
 
