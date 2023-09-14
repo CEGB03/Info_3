@@ -1,6 +1,7 @@
 import pruebas.*;
 import utils.Palindromo;
 
+import java.security.spec.RSAOtherPrimeInfo;
 import java.util.Scanner;
 
 public class Main {
@@ -22,10 +23,18 @@ public class Main {
 
         System.out.println("Palindromo Test.");
         PalindromoTest palindromoTest=new PalindromoTest();
-        System.out.println("Palindromo Test.2");
         palindromoTest.cadena1();
         palindromoTest.cadena2();
         palindromoTest.cadena3();
+        System.out.println("Ingrese una palabra o frase para corroborar si es palindromo:");
         palindromoTest.cadenaUsuario(sc.nextLine());
+
+        System.out.println("Expresiones Matemáticas Test");
+        ExpresionesMatemáticasTest expresionesMatemáticasTest=new ExpresionesMatemáticasTest();
+        expresionesMatemáticasTest.Pruebas();
+        System.out.println("Ingrese una expresion matematica con parentesis para corroborar si esta equilibrada:");
+        expresionesMatemáticasTest.expresionUsuario(sc.nextLine());
+
+
     }
 }
