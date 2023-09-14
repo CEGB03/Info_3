@@ -1,3 +1,7 @@
+package pruebas;
+import utils.Stack;
+import java.util.EmptyStackException;
+
 public class StackTest {
 
   public void testStackInteger() {
@@ -32,8 +36,12 @@ public class StackTest {
       System.out.println(stackString.pop());
       System.out.println(stackString.pop());
       System.out.println(stackString.pop());
+    } catch (EmptyStackException e) {
+      // Manejar la excepción de pila vacía
+      System.err.println("La pila está vacía. No se puede realizar una operación pop.");
     } catch (Exception e) {
-      // TODO: handle exception
+      // Manejar cualquier otra excepción que pueda ocurrir
+      System.err.println("Se produjo un error inesperado: " + e.getMessage());
     }
   }
 

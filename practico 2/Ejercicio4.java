@@ -1,6 +1,5 @@
 import java.util.Scanner;
 import utils.CapturaTiempo;
-import utils.Ordenamientos;
 
 public class Ejercicio4 {
     /**
