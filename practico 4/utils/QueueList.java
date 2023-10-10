@@ -43,5 +43,21 @@ public class QueueList<AnyType> {
   public boolean isEmpty() {
     return front == null;
   }
-
+  public int size() {
+    int count = 0;
+    Nodo<AnyType> actual = front;
+    while (actual != null) {
+      count++;
+      actual = actual.next;
+    }
+    return count;
+  }
+  public void imprimir(){
+    Nodo<AnyType> temp=null;
+      temp= front;
+      while(temp!=null){
+        System.out.println(temp.data);
+        temp=temp.next;
+      }
+  }
 }

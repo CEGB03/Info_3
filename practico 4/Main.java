@@ -22,8 +22,16 @@ public class Main {
         System.out.println("Ejercicio 5");
         Ejercicio5 ejercicio5=new Ejercicio5();
 
-        */
         System.out.println("Ejercicio 6");
         Ejercicio6 ejercicio6=new Ejercicio6();
+
+        System.out.println("Ejercicio 7");
+        Ejercicio7 ejercicio7 = new Ejercicio7();
+
+        */
+        System.out.println("Ejercicio 8");
+        String s = "Anita LaVa lA tINa";
+        Ejercicio8 ejercicio8 = new Ejercicio8(s);
+
     }
 }
