@@ -173,9 +173,17 @@ public class ArbolBinario<AnyType extends Comparable<? super AnyType>> {
         return node;
     }
 
-    private void imprimirArbolRecursivo(Nodo<AnyType> node, int nivel) {
+    public void imprimirArbolRecursivo1(Nodo<AnyType> node, String prefix, boolean isLeft) {
         if (node != null) {
-            imprimirArbolRecursivo(node.getDer(), nivel + 1);
+            System.out.println(prefix + (isLeft ? "|-- " : "\\-- ") + node.getDato());
+
+            imprimirArbolRecursivo1(node.getIz(), prefix + (isLeft ? "    " : "|   "), true);
+            imprimirArbolRecursivo1(node.getDer(), prefix + (isLeft ? "    " : "|   "), false);
+        }
+    }
+    public void imprimirArbolRecursivo2(Nodo<AnyType> node, int nivel) {
+        if (node != null) {
+            imprimirArbolRecursivo2(node.getDer(), nivel + 1);
 
             // Imprimir con indentación proporcional al nivel
             for (int i = 0; i < nivel; i++) {
@@ -184,7 +192,8 @@ public class ArbolBinario<AnyType extends Comparable<? super AnyType>> {
 
             System.out.println(node.getDato());
 
-            imprimirArbolRecursivo(node.getIz(), nivel + 1);
+            imprimirArbolRecursivo2(node.getIz(), nivel + 1);
         }
     }
+
 }
