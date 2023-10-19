@@ -195,5 +195,99 @@ public class ArbolBinario<AnyType extends Comparable<? super AnyType>> {
             imprimirArbolRecursivo2(node.getIz(), nivel + 1);
         }
     }
+    public void printTreePiramideHorizontal() {
+        System.out.println("imprimirArbolUtil1");
+        imprimirArbolUtil1(root, 0);
+        System.out.println("imprimirArbolUtil2");
+        imprimirArbolUtil2(root,"");
+    }
+
+    private void imprimirArbolUtil1(Nodo raiz, int espacio) {
+        final int distancia = 5;
+        if (raiz == null) {
+            return;
+        }
+
+        espacio += distancia;
+
+        imprimirArbolUtil1(raiz.getDer(), espacio);
+
+        System.out.println();
+        for (int i = distancia; i < espacio; i++) {
+            System.out.print(" ");
+        }
+        System.out.print(raiz.getDato() + "\n");
+
+        imprimirArbolUtil1(raiz.getIz(), espacio);
+    }
+    private void imprimirArbolUtil2(Nodo raiz, String prefijo) {
+        if (raiz != null) {
+            imprimirArbolUtil2(raiz.getDer(), prefijo + "        ");
+            if (raiz==root)
+                System.out.println(raiz.getDato());
+            else
+                System.out.println(prefijo + "/----- " + raiz.getDato());
+            imprimirArbolUtil2(raiz.getIz(), prefijo + "        ");
+        }
+    }
+
+    // StackOverflow1
+
+    /*
+    // StackOverflow2
+    public StringBuilder toString(StringBuilder prefix, boolean isTail, StringBuilder sb) {
+        if(right!=null) {
+            right.toString(new StringBuilder().append(prefix).append(isTail ? "│   " : "    "), false, sb);
+        }
+        sb.append(prefix).append(isTail ? "└── " : "┌── ").append(value.toString()).append("\n");
+        if(left!=null) {
+            left.toString(new StringBuilder().append(prefix).append(isTail ? "    " : "│   "), true, sb);
+        }
+        return sb;
+    }
+
+    @Override
+    public String toString() {
+        return this.toString(new StringBuilder(), true, new StringBuilder()).toString();
+    }
+    */
+    // StackOverflow3
+    public void print() {
+        print("", root, false);
+    }
+
+    public void print(String prefix, Nodo n, boolean isLeft) {
+        if (n != null) {
+            System.out.println (prefix + (isLeft ? "|-- " : "\\-- ") + n.getDato());
+            print(prefix + (isLeft ? "|   " : "    "), n.getIz(), true);
+            print(prefix + (isLeft ? "|   " : "    "), n.getDer(), false);
+        }
+    }
+    // StackOverflow 5
+    public void printFullTree(Nodo<AnyType> root, String delim, StringBuilder idnt, boolean left) {
+        if (root != null) {
+            idnt.append(delim);
+            String[] delims = setDelims(left);
+            printFullTree(root.getDer(), delims[0], idnt, false);
+            indent2(root.getDato(), idnt);
+            printFullTree(root.getIz(), delims[1], idnt, true);
+            idnt.delete(idnt.length() - delim.length(), idnt.length());
+        }
+    }
+
+    private static String[] setDelims(boolean left) {
+        String x = " ", y = "|";
+        return left ? new String[]{y, x} : left ? new String[]{x, y} : new String[]{x, x};
+    }
+
+    public void indent2(AnyType x, StringBuilder idnt) {
+        for (int i = 0; i < idnt.length(); i++) {
+            System.out.print(idnt.charAt(i) + "     ");  // Ajusta el espacio según tus necesidades
+        }
+        // Convierte root.getDato() a int si es compatible con Integer
+        int dato = ((Integer) x).intValue();
+
+        System.out.println("|-> " + dato);
+    }
 
 }
