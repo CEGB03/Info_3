@@ -1,16 +1,22 @@
 package utils;
 
-public class Nodo<AnyType> implements TreePrinter.PrintableNode {
+public class Nodo<AnyType>{
     private AnyType dato;
     private Nodo<AnyType> iz;
     private Nodo<AnyType> der;
+    private int bal;
+    private int altura;
     public Nodo(AnyType datoEntrada){
         this.dato=datoEntrada;
+        this.bal=0;
+        this.altura = 0;
         this.der=null;
         this.iz=null;
     }
     public Nodo(AnyType datoEntrada, Nodo<AnyType> izt, Nodo<AnyType> dert){
         dato=datoEntrada;
+        bal=0;
+        altura = 0;
         iz=izt;
         der=dert;
     }
@@ -34,6 +40,8 @@ public class Nodo<AnyType> implements TreePrinter.PrintableNode {
     public Nodo<AnyType> getDer() {return der;}
 
     public Nodo<AnyType> getIz() {return iz;}
+    public int getBal() {return bal;}
+    public int getAltura() {return altura;}
 
     public void setDato(AnyType dato) {this.dato = dato;}
 
@@ -41,6 +49,13 @@ public class Nodo<AnyType> implements TreePrinter.PrintableNode {
 
     public void setIz(Nodo<AnyType> iz) {this.iz = iz;}
 
+    public void setBal(int balcance) {this.bal = balcance;}
+
+    public void actualizarAltura() {
+        int alturaIzquierda = (iz != null) ? iz.getAltura() : -1;
+        int alturaDerecha = (der != null) ? der.getAltura() : -1;
+        altura = 1 + Math.max(alturaIzquierda, alturaDerecha);
+    }
 
     public void imprimirPreOrder() {
         System.out.print(dato+" ");       // dato
@@ -64,19 +79,5 @@ public class Nodo<AnyType> implements TreePrinter.PrintableNode {
         System.out.print(dato+" ");        // dato
         if (der != null)
             der.imprimirInOrder();     // derecho
-    }
-    @Override
-    public TreePrinter.PrintableNode getLeft() {
-        return iz;
-    }
-
-    @Override
-    public TreePrinter.PrintableNode getRight() {
-        return der;
-    }
-
-    @Override
-    public String getText() {
-        return dato.toString();
     }
 }

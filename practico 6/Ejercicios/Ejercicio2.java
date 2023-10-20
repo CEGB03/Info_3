@@ -17,14 +17,20 @@ public class Ejercicio2 {
         integerArbolBinario.imprimirArbolRecursivo2(integerArbolBinario.getRoot(),0);
         System.out.println("Impresion de recursivo 1:");
         integerArbolBinario.imprimirArbolRecursivo1(integerArbolBinario.getRoot(),"",false);
-        System.out.println("Impresion de printTreePiramide recursivo: NO" );
-        *//*integerArbolBinario.printTreePiramideHorizontal();*//*
+
+        System.out.println("print(stackoverflow)" );
+        integerArbolBinario.printTreePiramideHorizontal();
+
         System.out.println("print(stackoverflow3)");
         integerArbolBinario.print();
         */
         System.out.println("\n\n\nprint(stackoverflow5)");
         StringBuilder identacion = new StringBuilder();
         integerArbolBinario.printFullTree(integerArbolBinario.getRoot(), "", identacion, false);
+        System.out.println("\n\n\nprint(stackoverflow1)");
+        integerArbolBinario.StackOverflow1();
+        System.out.println("\n\n\nprint(stackoverflow2)");
+        integerArbolBinario.StackOverflow2();
     }
     private void cargaArbol() throws Exception {
         Random random = new Random();

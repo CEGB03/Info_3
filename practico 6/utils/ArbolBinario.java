@@ -231,10 +231,17 @@ public class ArbolBinario<AnyType extends Comparable<? super AnyType>> {
         }
     }
 
-    // StackOverflow1
-
-    /*
+    // StackOverflow1 inicio
+    public void StackOverflow1(){
+        BTreePrinter printer = new BTreePrinter();
+        BTreePrinter.printNode(root);
+    }
     // StackOverflow2
+    public void StackOverflow2(){
+        TreePrinter printer=new TreePrinter();
+        TreePrinter.print((TreePrinter.PrintableNode) root);
+    }
+    /*
     public StringBuilder toString(StringBuilder prefix, boolean isTail, StringBuilder sb) {
         if(right!=null) {
             right.toString(new StringBuilder().append(prefix).append(isTail ? "│   " : "    "), false, sb);
